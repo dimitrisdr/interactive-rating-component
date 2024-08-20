@@ -1,0 +1,199 @@
+/* css reset */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass';
+}
+
+/* custom properties */
+
+:root {
+    /* primary */
+    --Orange: hsl(25, 97%, 53%);
+    /* secondary */
+    --White: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Dark-Blue-light: hsl(210, 18%, 24%);
+    --Dark-Blue: hsl(213, 19%, 18%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+
+/* css reset */
+
+h1 {
+    line-height: 1.2;
+}
+
+button {
+    font-size: inherit;
+}
+
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* main style */
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: var(--Very-Dark-Blue);
+    color: var(--White);
+    line-height: 1.5;
+    margin-block: 2rem;
+    gap: 3rem;
+}
+
+.wraper {
+    display: grid;
+    gap: 1rem;
+    max-width: 400px;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.wraper > * {
+    padding: 1.5rem;
+    display: grid;
+    gap: 2rem;
+    background-color: var(--Dark-Blue);
+    border-radius: 12px;
+}
+
+.instructions {
+    color: var(--Light-Grey);
+    font-size: 0.925rem;
+}
+
+.star-container {
+    width: fit-content;
+    background-color: var(--Dark-Blue-light);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.main-content {
+    display: grid;
+    gap: 1rem;
+}
+
+.form {
+    display: grid;
+    gap: 1rem;
+}
+
+.rate-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+}
+
+.rate-label {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--Dark-Blue-light);
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    color: var(--Light-Grey);
+}
+
+.rate-label:hover {
+    background-color: var(--Orange);
+    color: var(--Dark-Blue);
+}
+
+input[name="rating"] {
+    display: none;
+    appearance: none;
+}
+
+input[name="rating"]:checked ~.rate-label {
+    background-color: white;
+    color: var(--Dark-Blue);
+} 
+
+.submit-btn {
+    padding-block: 0.8rem; 
+    border: none;   
+    border-radius: 100vw;
+    background-color: var(--Orange);
+    color: var(--Dark-Blue);
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: 0.2s ease-in;
+}
+
+.submit-btn:hover, .submit-btn:focus {
+    background-color: white;
+}
+
+.thank-you-section {
+    display: grid;
+    gap: 2rem;
+    justify-items: center;
+    position: absolute;
+    transform: translateY(0) scale(1);
+    transition: 0.5s ease-in;
+}
+
+.hidden {
+    transform: translateY(-100%) scale(0);
+}
+
+.picture-text {
+    background-color: var(--Dark-Blue-light);
+    color: var(--Orange);
+    padding: 0.5rem 1rem;
+    border-radius: 100vw;
+}
+
+.thank-you-pic, .final-text-container {
+    display: grid;
+    gap: 0.5rem
+}
+
+.thank-you-pic {
+    display: grid;
+    gap: 1rem;
+}
+
+.final-text-container {
+    text-align: center;
+}
+
+
+.disabled {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* frontend mentor styles */
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (max-width:330px) {
+    .rate-inputs {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
+
