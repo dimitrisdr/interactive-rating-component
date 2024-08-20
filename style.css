@@ -40,11 +40,11 @@ svg {
 body {
     display: grid;
     place-content: center;
-    height: calc(100vh - 5rem);
+    min-height: 100vh;
     background-color: var(--Very-Dark-Blue);
     color: var(--White);
     line-height: 1.5;
-    margin-block: 2rem;
+    
     gap: 3rem;
 }
 
@@ -52,6 +52,7 @@ body {
     display: grid;
     gap: 1rem;
     max-width: 400px;
+    margin-block: 2rem;
     position: relative;
     /* overflow: hidden; */
 }
